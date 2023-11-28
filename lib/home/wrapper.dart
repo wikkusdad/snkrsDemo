@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:snkrs_demo/main.dart';
+//import 'package:snkrs_demo/main.dart';
 import 'package:snkrs_demo/models/user.dart';
 import 'package:snkrs_demo/authenticate/authentication.dart';
 import 'package:snkrs_demo/pages/home.dart';

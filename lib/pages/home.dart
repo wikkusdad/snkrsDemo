@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 import 'package:snkrs_demo/authenticate/auth.dart';
 import 'package:snkrs_demo/footer.dart';
 import 'package:snkrs_demo/menu_button.dart';
-import 'package:snkrs_demo/models/user.dart';
+//import 'package:snkrs_demo/models/user.dart';
 import 'package:snkrs_demo/pages/checkout_page.dart';
 import 'package:snkrs_demo/pages/in_stock.dart';
 import 'package:snkrs_demo/pages/list_builder.dart';
 import 'package:snkrs_demo/pages/lists.dart';
 import 'package:snkrs_demo/pages/upcoming.dart';
-import 'package:snkrs_demo/splash_screen.dart';
+//import 'package:snkrs_demo/splash_screen.dart';
 
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);

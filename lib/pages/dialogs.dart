@@ -1,5 +1,5 @@
 import 'package:snkrs_demo/colors/colors.dart';
-import 'package:snkrs_demo/main.dart';
+//import 'package:snkrs_demo/main.dart';
 import 'package:snkrs_demo/pages/checkout_page.dart';
 import 'package:flutter/material.dart';
 import 'package:snkrs_demo/pages/home.dart';

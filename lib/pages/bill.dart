@@ -8,7 +8,7 @@ class BillPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.grey, // Valkoinen taustaväri
+        color: Colors.grey,
         padding: EdgeInsets.all(26.0),
         child: Center(
           child: Container(

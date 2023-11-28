@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snkrs_demo/authenticate/auth.dart';
-import 'package:snkrs_demo/main.dart';
+//import 'package:snkrs_demo/main.dart';
 import 'package:snkrs_demo/pages/home.dart';
 
 class LoginPage extends StatefulWidget {
