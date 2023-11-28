@@ -42,16 +42,14 @@ class InStockPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: MyColor.vaaleanpunainen, // Määritä reunuksen väri
-          width: 2.0, // Määritä reunuksen leveys
+          color: MyColor.vaaleanpunainen,
+          width: 2.0,
         ),
-        borderRadius:
-            BorderRadius.circular(6.0), // Määritä reunuksen kulma pyöristys
+        borderRadius: BorderRadius.circular(6.0),
       ),
       child: Image.asset(
         imageUrl,
         height: 220.0,
-        // Voit lisätä muita kuvan asetuksia tarpeen mukaan
       ),
     );
   }

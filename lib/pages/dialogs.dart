@@ -60,7 +60,7 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
     width: 190,
     child: TextButton.icon(
       onPressed: () {
-        Navigator.pop(context, "Lasku"); // Palauta valittu maksutapa
+        Navigator.pop(context, "Lasku");
       },
       icon: Icon(Icons.insert_drive_file),
       label: Text("Bill"),
@@ -75,7 +75,7 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
     width: 190,
     child: TextButton.icon(
       onPressed: () {
-        Navigator.pop(context, "Card"); // Palauta valittu maksutapa
+        Navigator.pop(context, "Card");
       },
       icon: Icon(Icons.credit_card),
       label: Text("Debit or Credit Card"),
@@ -90,7 +90,7 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
     width: 190,
     child: TextButton.icon(
       onPressed: () {
-        Navigator.pop(context, "Transfer"); // Palauta valittu maksutapa
+        Navigator.pop(context, "Transfer");
       },
       icon: Icon(Icons.monetization_on_outlined),
       label: Text("Bank Transfer"),
@@ -122,7 +122,6 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
 
   return selectedOption;
 
-  // Palauta valittu maksutapa
   //if (selectedOption != null) {
   //selectedPaymentMethod = selectedOption;
   // return selectedOption;

@@ -38,9 +38,7 @@ class _PaymentPageState extends State<PaymentPage> {
               const TextField(
                 decoration: InputDecoration(labelText: 'Koko nimi'),
               ),
-              // Erotin viiva
               Divider(),
-              // Kuljetustiedot
               const Text(
                 'Kuljetustiedot',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -57,13 +55,11 @@ class _PaymentPageState extends State<PaymentPage> {
               const TextField(
                 decoration: InputDecoration(labelText: 'Postinumero'),
               ),
-              // Valitse maksutapa -painike
               ElevatedButton(
                 onPressed: () async {
                   String? result = await showPaymentOptionsDialog(context);
                   setState(() {
-                    selectedPaymentMethod = result ??
-                        ''; // Käytä tyhjää merkkijonoa, jos result on null
+                    selectedPaymentMethod = result ?? '';
                   });
                 },
                 child: Text('Valitse maksutapa'),
@@ -76,23 +72,19 @@ class _PaymentPageState extends State<PaymentPage> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-
               SizedBox(height: 16.0),
               Text(
                 'Yhteenveto',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-
               ListTile(
                 title: Text('Kuljetusmaksu'),
                 trailing: Text('10 €'),
               ),
-
               ListTile(
                 title: Text('Ostoskorin summa'),
                 trailing: Text('${calculateTotalAmount()} €'),
               ),
-
               ListTile(
                 title: Text(
                   'Yhteensä',
@@ -107,15 +99,12 @@ class _PaymentPageState extends State<PaymentPage> {
                 visible: selectedPaymentMethod.isNotEmpty,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Ohjaa käyttäjä tiettyyn näkymään valinnan perusteella
                     if (selectedPaymentMethod == 'Lasku') {
-                      // Ohjaa lasku-näkymään
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => BillPage()),
                       );
                     } else if (selectedPaymentMethod == 'Card') {
-                      // Ohjaa kortti-näkymään
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => CardPage()),

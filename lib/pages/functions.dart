@@ -21,7 +21,6 @@ void addTobag2(
 double calculateTotalAmount(List<List<dynamic>> basket) {
   double sum = 0.0;
   basket.forEach((item) {
-    // Huomaa, että item[4] on indeksi, joka vastaa hinnan sijaintia listassa
     sum += item[4] as double;
   });
   return sum;
