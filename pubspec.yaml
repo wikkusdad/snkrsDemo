@@ -40,10 +40,20 @@ dependencies:
   firebase_core: ^2.23.0
   provider: ^6.1.1
   google_fonts: ^6.1.0
+  fluttertoast: ^8.2.2
+  shared_preferences: ^2.2.2
+  google_sign_in: ^6.1.5
+  firebase_storage: ^11.2.4
+  font_awesome_flutter: ^10.6.0
+  image_picker: ^1.0.7
+  flutter_social_button: any
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+    
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -72,6 +82,31 @@ flutter:
   - assets/images/airjordan1.jpg
   - assets/images/airjordan3.jpg
   - assets/images/jordanhoodie2.jpg
+  - assets/images/jordan_mid.png
+  - assets/images/jordan_mid2.png
+  - assets/images/jordan_mid3.png
+  - assets/images/jordan_mid4.png
+  - assets/images/jordan_mid5.png
+  - assets/images/AF.png
+  - assets/images/AF2.png
+  - assets/images/AF3.png
+  - assets/images/AF4.png
+  - assets/images/AF5.png
+  - assets/images/dunk.png
+  - assets/images/dunk2.png
+  - assets/images/dunk3.png
+  - assets/images/dunk4.png
+  - assets/images/dunk5.png
+  - assets/images/hoodie.png
+  - assets/images/hoodie2.png
+  - assets/images/hoodie3.png
+  - assets/images/hoodie4.png
+  - assets/images/esittely.png
+  - assets/images/esittely2.png
+  - assets/images/esittely3.PNG
+  - assets/images/esittely4.PNG
+  - assets/images/esittely5.PNG
+  
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

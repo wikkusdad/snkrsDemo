@@ -1,13 +1,13 @@
-import 'package:snkrs_demo/colors/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:snkrs_demo/colors/colors.dart';
 
 List sneakersList = [
   [
     "Nike",
     "Air Jordans",
-    "Follow in the footsteps of greatness. The all-time classic AJ1 design gets a makeover with fresh pops of colour and mixed materials.",
+    "Inspiroituneena alkuperäisestä AJ1:stä Air Jordan 1 Mid tarjoaa faneille mahdollisuuden astua MJ:n jalanjäljille. Raikkaat värit korostavat siistiä, klassista materiaalia, tuoden moderniutta perinteiseen muotoiluun.",
     199,
-    'assets/images/airjordans1.png',
+    'assets/images/jordan_mid.png',
     LinearGradient(
       colors: [Colors.black, MyColor.violetti],
     )
@@ -15,9 +15,9 @@ List sneakersList = [
   [
     "Nike",
     "Air Jordans",
-    "Follow in the footsteps of greatness. The all-time classic AJ1 design gets a makeover with fresh pops of colour and mixed materials.",
+    "Inspiroituneena alkuperäisestä AJ1:stä Air Jordan 1 Mid tarjoaa faneille mahdollisuuden astua MJ:n jalanjäljille. Raikkaat värit korostavat siistiä, klassista materiaalia, tuoden moderniutta perinteiseen muotoiluun.",
     199,
-    'assets/images/airjordans1.png',
+    'assets/images/jordan_mid2.png',
     LinearGradient(
       colors: [Colors.black, MyColor.violetti],
     )
@@ -25,9 +25,9 @@ List sneakersList = [
   [
     "Nike",
     "Air Jordans",
-    "Follow in the footsteps of greatness. The all-time classic AJ1 design gets a makeover with fresh pops of colour and mixed materials.",
+    "Inspiroituneena alkuperäisestä AJ1:stä Air Jordan 1 Mid tarjoaa faneille mahdollisuuden astua MJ:n jalanjäljille. Raikkaat värit korostavat siistiä, klassista materiaalia, tuoden moderniutta perinteiseen muotoiluun.",
     199,
-    'assets/images/airjordans1.png',
+    'assets/images/jordan_mid3.png',
     LinearGradient(
       colors: [Colors.black, MyColor.violetti],
     )
@@ -35,9 +35,9 @@ List sneakersList = [
   [
     "Nike",
     "Air Jordans",
-    "Follow in the footsteps of greatness. The all-time classic AJ1 design gets a makeover with fresh pops of colour and mixed materials.",
+    "Inspiroituneena alkuperäisestä AJ1:stä Air Jordan 1 Mid tarjoaa faneille mahdollisuuden astua MJ:n jalanjäljille. Raikkaat värit korostavat siistiä, klassista materiaalia, tuoden moderniutta perinteiseen muotoiluun.",
     199,
-    'assets/images/airjordans1.png',
+    'assets/images/jordan_mid4.png',
     LinearGradient(
       colors: [Colors.black, MyColor.violetti],
     )
@@ -45,9 +45,9 @@ List sneakersList = [
   [
     "Nike",
     "Air Jordans",
-    "Follow in the footsteps of greatness. The all-time classic AJ1 design gets a makeover with fresh pops of colour and mixed materials.",
+    "Inspiroituneena alkuperäisestä AJ1:stä Air Jordan 1 Mid tarjoaa faneille mahdollisuuden astua MJ:n jalanjäljille. Raikkaat värit korostavat siistiä, klassista materiaalia, tuoden moderniutta perinteiseen muotoiluun.",
     199,
-    'assets/images/airjordans1.png',
+    'assets/images/jordan_mid5.png',
     LinearGradient(
       colors: [Colors.black, MyColor.violetti],
     )
@@ -58,9 +58,9 @@ List AF1List = [
   [
     "Nike",
     "Air Force 1",
-    "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+    "Säteily elää edelleen Nike Air Force 1 '07:ssä, koripallon alkuperäisessä, joka antaa tuoreen tulkinnan siitä, mitä parhaiten tiedät: kestävästi ommellut päällysosat, siistit viimeistelyt ja täydellinen määrä hehkua saadaksesi sinut loistamaan.",
     149,
-    'assets/images/airjordan1.jpg',
+    'assets/images/AF5.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vaaleanpunainen],
     )
@@ -68,9 +68,9 @@ List AF1List = [
   [
     "Nike",
     "Air Force 1",
-    "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+    "Säteily elää edelleen Nike Air Force 1 '07:ssä, koripallon alkuperäisessä, joka antaa tuoreen tulkinnan siitä, mitä parhaiten tiedät: kestävästi ommellut päällysosat, siistit viimeistelyt ja täydellinen määrä hehkua saadaksesi sinut loistamaan.",
     149,
-    'assets/images/airjordan1.jpg',
+    'assets/images/AF2.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vaaleanpunainen],
     )
@@ -78,9 +78,9 @@ List AF1List = [
   [
     "Nike",
     "Air Force 1",
-    "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+    "Säteily elää edelleen Nike Air Force 1 '07:ssä, koripallon alkuperäisessä, joka antaa tuoreen tulkinnan siitä, mitä parhaiten tiedät: kestävästi ommellut päällysosat, siistit viimeistelyt ja täydellinen määrä hehkua saadaksesi sinut loistamaan.",
     199,
-    'assets/images/airjordan1.jpg',
+    'assets/images/AF3.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vaaleanpunainen],
     )
@@ -88,9 +88,9 @@ List AF1List = [
   [
     "Nike",
     "Air Force 1",
-    "Follow in the footsteps of greatness. The all-time classic AJ1 design gets a makeover with fresh pops of colour and mixed materials.",
+    "Säteily elää edelleen Nike Air Force 1 '07:ssä, koripallon alkuperäisessä, joka antaa tuoreen tulkinnan siitä, mitä parhaiten tiedät: kestävästi ommellut päällysosat, siistit viimeistelyt ja täydellinen määrä hehkua saadaksesi sinut loistamaan.",
     199,
-    'assets/images/airjordan1.jpg',
+    'assets/images/AF4.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vaaleanpunainen],
     )
@@ -98,9 +98,9 @@ List AF1List = [
   [
     "Nike",
     "Air Force 1",
-    "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+    "Säteily elää edelleen Nike Air Force 1 '07:ssä, koripallon alkuperäisessä, joka antaa tuoreen tulkinnan siitä, mitä parhaiten tiedät: kestävästi ommellut päällysosat, siistit viimeistelyt ja täydellinen määrä hehkua saadaksesi sinut loistamaan.",
     199,
-    'assets/images/airjordan1.jpg',
+    'assets/images/AF.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vaaleanpunainen],
     )
@@ -111,9 +111,9 @@ List dunksList = [
   [
     "Nike",
     "Dunks",
-    "Get back to the past with these coveted retros. Celebrating the '85 original, they bring back the shape that started the off-court revolution. With classic details and throwback hoops flair, they let you channel vintage style back onto the streets. The padded, high-top collar means you can take your game anywhere—in comfort.",
+    "Alun perin luotu koripalloon, mutta viety kaduille, Nike Dunk Low Retro palaa rapsakoilla päällysosilla ja alkuperäisillä joukkueväreillä. Tämä koripallon ikoni kanavoi '80-luvun tunnelmaa yläosan laadukkaalla nahalla, joka näyttää hyvältä ja mukautuu vielä paremmin. Nykyaikainen jalkineiden teknologia auttaa tuomaan mukavuuden 2000-luvulle.",
     149,
-    'assets/images/airjordan3.jpg',
+    'assets/images/dunk.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vihrea],
     )
@@ -121,9 +121,9 @@ List dunksList = [
   [
     "Nike",
     "Dunks",
-    "Get back to the past with these coveted retros. Celebrating the '85 original, they bring back the shape that started the off-court revolution. With classic details and throwback hoops flair, they let you channel vintage style back onto the streets. The padded, high-top collar means you can take your game anywhere—in comfort.",
+    "Alun perin luotu koripalloon, mutta viety kaduille, Nike Dunk Low Retro palaa rapsakoilla päällysosilla ja alkuperäisillä joukkueväreillä. Tämä koripallon ikoni kanavoi '80-luvun tunnelmaa yläosan laadukkaalla nahalla, joka näyttää hyvältä ja mukautuu vielä paremmin. Nykyaikainen jalkineiden teknologia auttaa tuomaan mukavuuden 2000-luvulle.",
     149,
-    'assets/images/airjordan3.jpg',
+    'assets/images/dunk2.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vihrea],
     )
@@ -131,9 +131,9 @@ List dunksList = [
   [
     "Nike",
     "Dunks",
-    "Get back to the past with these coveted retros. Celebrating the '85 original, they bring back the shape that started the off-court revolution. With classic details and throwback hoops flair, they let you channel vintage style back onto the streets. The padded, high-top collar means you can take your game anywhere—in comfort.",
+    "Alun perin luotu koripalloon, mutta viety kaduille, Nike Dunk Low Retro palaa rapsakoilla päällysosilla ja alkuperäisillä joukkueväreillä. Tämä koripallon ikoni kanavoi '80-luvun tunnelmaa yläosan laadukkaalla nahalla, joka näyttää hyvältä ja mukautuu vielä paremmin. Nykyaikainen jalkineiden teknologia auttaa tuomaan mukavuuden 2000-luvulle.",
     199,
-    'assets/images/airjordan3.jpg',
+    'assets/images/dunk3.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vihrea],
     )
@@ -141,9 +141,19 @@ List dunksList = [
   [
     "Nike",
     "Dunks",
-    "Get back to the past with these coveted retros. Celebrating the '85 original, they bring back the shape that started the off-court revolution. With classic details and throwback hoops flair, they let you channel vintage style back onto the streets. The padded, high-top collar means you can take your game anywhere—in comfort.",
+    "Alun perin luotu koripalloon, mutta viety kaduille, Nike Dunk Low Retro palaa rapsakoilla päällysosilla ja alkuperäisillä joukkueväreillä. Tämä koripallon ikoni kanavoi '80-luvun tunnelmaa yläosan laadukkaalla nahalla, joka näyttää hyvältä ja mukautuu vielä paremmin. Nykyaikainen jalkineiden teknologia auttaa tuomaan mukavuuden 2000-luvulle.",
     149,
-    'assets/images/airjordan3.jpg',
+    'assets/images/dunk4.png',
+    LinearGradient(
+      colors: [Colors.black, MyColor.vihrea],
+    )
+  ],
+  [
+    "Nike",
+    "Dunks",
+    "Alun perin luotu koripalloon, mutta viety kaduille, Nike Dunk Low Retro palaa rapsakoilla päällysosilla ja alkuperäisillä joukkueväreillä. Tämä koripallon ikoni kanavoi '80-luvun tunnelmaa yläosan laadukkaalla nahalla, joka näyttää hyvältä ja mukautuu vielä paremmin. Nykyaikainen jalkineiden teknologia auttaa tuomaan mukavuuden 2000-luvulle.",
+    149,
+    'assets/images/dunk5.png',
     LinearGradient(
       colors: [Colors.black, MyColor.vihrea],
     )
@@ -154,13 +164,43 @@ List hoodies = [
   [
     "Jordan",
     "Hoodie",
-    "Cool hoodie",
+    "Hikeä hylkivän teknologian ja tilavan siluetin ansiosta voit käyttää tätä monikäyttöistä fleece-hoodiea treenin aikana tai lounaalla. Tai ollaksesi tekemättä mitään. Joskus tarvitset vain kodikkaan hetken tyylikkäässä hupparissa.",
     129,
-    'assets/images/Jordanhoodie.png',
+    'assets/images/hoodie.png',
+    LinearGradient(
+      colors: [Colors.black, MyColor.punainen],
+    )
+  ],
+  [
+    "Jordan",
+    "Hoodie",
+    "Hikeä hylkivän teknologian ja tilavan siluetin ansiosta voit käyttää tätä monikäyttöistä fleece-hoodiea treenin aikana tai lounaalla. Tai ollaksesi tekemättä mitään. Joskus tarvitset vain kodikkaan hetken tyylikkäässä hupparissa.",
+    129,
+    'assets/images/hoodie2.png',
+    LinearGradient(
+      colors: [Colors.black, MyColor.punainen],
+    )
+  ],
+  [
+    "Jordan",
+    "Hoodie",
+    "Hikeä hylkivän teknologian ja tilavan siluetin ansiosta voit käyttää tätä monikäyttöistä fleece-hoodiea treenin aikana tai lounaalla. Tai ollaksesi tekemättä mitään. Joskus tarvitset vain kodikkaan hetken tyylikkäässä hupparissa.",
+    129,
+    'assets/images/hoodie3.png',
+    LinearGradient(
+      colors: [Colors.black, MyColor.punainen],
+    )
+  ],
+  [
+    "Jordan",
+    "Hoodie",
+    "Hikeä hylkivän teknologian ja tilavan siluetin ansiosta voit käyttää tätä monikäyttöistä fleece-hoodiea treenin aikana tai lounaalla. Tai ollaksesi tekemättä mitään. Joskus tarvitset vain kodikkaan hetken tyylikkäässä hupparissa.",
+    129,
+    'assets/images/hoodie4.png',
     LinearGradient(
       colors: [Colors.black, MyColor.punainen],
     )
   ]
 ];
 
-List basket = [];
+List<List<String>> basket = [];

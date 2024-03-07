@@ -1,5 +1,10 @@
-import 'package:snkrs_demo/colors/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:snkrs_demo/colors/colors.dart';
+import 'package:snkrs_demo/pages/functions.dart';
+import 'package:snkrs_demo/pages/payment.dart';
+import 'package:snkrs_demo/pages/success_screen.dart';
+
+import 'lists.dart';
 
 class BillPage extends StatelessWidget {
   const BillPage({Key? key}) : super(key: key);
@@ -43,7 +48,12 @@ class BillPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PaymentPage()));
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.black,
                         ),
@@ -51,7 +61,15 @@ class BillPage extends StatelessWidget {
                       ),
                       SizedBox(width: 8.0),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SuccessScreen(),
+                            ),
+                          );
+                          emptyBasket(basket);
+                        },
                         style: ElevatedButton.styleFrom(primary: Colors.black),
                         child: Text('Vahvista tilaus'),
                       ),

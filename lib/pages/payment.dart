@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:snkrs_demo/pages/bill.dart';
 import 'package:snkrs_demo/pages/card.dart';
 import 'package:snkrs_demo/pages/dialogs.dart';
-import 'package:flutter/material.dart';
 import 'package:snkrs_demo/pages/lists.dart';
+import 'package:snkrs_demo/pages/transfer.dart';
 
 class PaymentPage extends StatefulWidget {
   @override
@@ -14,17 +15,18 @@ class _PaymentPageState extends State<PaymentPage> {
 
   @override
   Widget build(BuildContext context) {
-    int calculateTotalAmount() {
-      int sum = 0;
+    double calculateTotalAmount(List<List<dynamic>> basket) {
+      double sum = 0.0;
       basket.forEach((item) {
-        sum += item[4] as int;
+        sum += double.parse(item[4].toString());
       });
       return sum;
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Payment Page'),
+        backgroundColor: Colors.black,
+        title: Text('Kassa'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -56,6 +58,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 decoration: InputDecoration(labelText: 'Postinumero'),
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.black),
                 onPressed: () async {
                   String? result = await showPaymentOptionsDialog(context);
                   setState(() {
@@ -68,7 +71,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 6.0),
                   child: Text(
-                    'Selected payment method: $selectedPaymentMethod',
+                    'Olet valinnut maksutavaksi $selectedPaymentMethod',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -83,7 +86,8 @@ class _PaymentPageState extends State<PaymentPage> {
               ),
               ListTile(
                 title: Text('Ostoskorin summa'),
-                trailing: Text('${calculateTotalAmount()} €'),
+                trailing: Text(
+                    '${calculateTotalAmount(basket).toStringAsFixed(2)} €'),
               ),
               ListTile(
                 title: Text(
@@ -91,27 +95,33 @@ class _PaymentPageState extends State<PaymentPage> {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  '${calculateTotalAmount() + 10} €',
+                  '${(calculateTotalAmount(basket) + 10).toStringAsFixed(2)} €',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
               Visibility(
                 visible: selectedPaymentMethod.isNotEmpty,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.black),
                   onPressed: () {
                     if (selectedPaymentMethod == 'Lasku') {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => BillPage()),
                       );
-                    } else if (selectedPaymentMethod == 'Card') {
+                    } else if (selectedPaymentMethod == 'Kortti') {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => CardPage()),
                       );
+                    } else if (selectedPaymentMethod == 'Tilisiirto') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => bankTransfer()),
+                      );
                     }
                   },
-                  child: Text('Next'),
+                  child: Text('Seuraava'),
                 ),
               ),
             ],

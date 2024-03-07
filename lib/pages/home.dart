@@ -1,41 +1,25 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'package:provider/provider.dart';
-import 'package:snkrs_demo/authenticate/auth.dart';
 import 'package:snkrs_demo/footer.dart';
 import 'package:snkrs_demo/menu_button.dart';
-//import 'package:snkrs_demo/models/user.dart';
+import 'package:snkrs_demo/models/toast.dart';
 import 'package:snkrs_demo/pages/checkout_page.dart';
-import 'package:snkrs_demo/pages/in_stock.dart';
+import 'package:snkrs_demo/pages/faq.dart';
+import 'package:snkrs_demo/pages/feedback_page.dart';
 import 'package:snkrs_demo/pages/list_builder.dart';
 import 'package:snkrs_demo/pages/lists.dart';
-import 'package:snkrs_demo/pages/upcoming.dart';
-//import 'package:snkrs_demo/splash_screen.dart';
+import 'package:snkrs_demo/pages/profile.dart';
 
 class Home extends StatelessWidget {
   Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: NavigationPage(),
+    );
   }
-}
-
-final AuthService _auth = AuthService();
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('hei'),
-      actions: <Widget>[
-        ElevatedButton(
-            onPressed: () async {
-              await _auth.signOut();
-            },
-            child: Text('kirjaudu ulos'))
-      ],
-    ),
-  );
 }
 
 class NavigationPage extends StatefulWidget {
@@ -58,16 +42,14 @@ class _NavigationPageState extends State<NavigationPage> {
               Row(
                 children: [
                   MenuButton(onItemSelected: (value) {
-                    if (value == 'In stock') {
+                    if (value == 'FAQ') {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => FAQPage()));
+                    } else if (value == 'Asiakas palautteet') {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => InStockPage()));
-                    } else if (value == 'Upcoming') {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => UpcomingPage()));
+                              builder: (context) => FeedbackListPage()));
                     }
                   }),
                 ],
@@ -76,22 +58,34 @@ class _NavigationPageState extends State<NavigationPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(right: 15),
+                    padding: EdgeInsets.only(right: 10),
                     child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.logout_sharp),
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                          Navigator.pushNamed(context, "/login");
+                          showToast(message: "Kirjauduttu ulos onnistuneesti.");
+                        },
+                        icon: Icon(Icons.logout_sharp)),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfilePage()),
+                            );
+                          },
+                          icon: Icon(Icons.man),
+                        ),
+                      ],
                     ),
                   ),
-                  //Padding(
-                  //padding: EdgeInsets.only(right: 10),
-                  //child:
-                  //IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-                  //),
-                  //Padding(
-                  //padding: EdgeInsets.only(right: 10),
-                  //child: IconButton(
-                  //  onPressed: () {}, icon: Icon(Icons.filter_list)),
-                  //),
                   Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Row(

@@ -1,7 +1,5 @@
-import 'package:snkrs_demo/pages/payment.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:snkrs_demo/pages/payment.dart';
 
 import 'lists.dart';
 
@@ -41,7 +39,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     padding: EdgeInsets.all(5),
                     child: Row(
                       children: [
-                        Image.asset(basket[index][2]),
+                        Image.asset(
+                          basket[index][2],
+                          width: 140,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -93,7 +94,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Icon(Icons.payment),
-                            Text("Checkout"),
+                            Text("Maksamaan"),
                           ],
                         ),
                         onPressed: () {
@@ -106,7 +107,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     )
                   : Center(
                       child: Text(
-                        "Your basket is empty.",
+                        "Ostoskorisi on tyhjä",
                         style: TextStyle(fontSize: 24),
                       ),
                     ),

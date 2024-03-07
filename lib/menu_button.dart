@@ -10,7 +10,10 @@ class MenuButton extends StatelessWidget {
     return PopupMenuButton<String>(
       onSelected: onItemSelected,
       itemBuilder: (BuildContext context) {
-        return {'Feed', 'In stock', 'Upcoming'}.map((String choice) {
+        return {
+          'Asiakas palautteet',
+          'FAQ',
+        }.map((String choice) {
           return PopupMenuItem<String>(
             value: choice,
             child: Text(choice),

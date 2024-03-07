@@ -1,9 +1,22 @@
+import 'package:flutter/material.dart';
 import 'package:snkrs_demo/colors/colors.dart';
 //import 'package:snkrs_demo/main.dart';
 import 'package:snkrs_demo/pages/checkout_page.dart';
-import 'package:flutter/material.dart';
 import 'package:snkrs_demo/pages/home.dart';
 //import 'package:adding_items/pages/payment.dart';
+
+showTutorialDialog(BuildContext context) {
+  Widget tutorialButton = TextButton(onPressed: () {}, child: Text("Seuraava"));
+  AlertDialog alert = AlertDialog(
+    title: Text("Tervetuloa käyttämään Sneakers app sovellusta!"),
+    content: Text(
+        "Haluan esitellä sinulle muutamia tärkeitä asioita sovelluksesta."),
+    backgroundColor: MyColor.turkoosi,
+    actions: [
+      tutorialButton,
+    ],
+  );
+}
 
 showSuccessDialog(BuildContext context) {
   Widget basketButton = TextButton(
@@ -11,7 +24,7 @@ showSuccessDialog(BuildContext context) {
       primary: Colors.white,
       backgroundColor: Colors.black,
     ),
-    child: Text("Go to basket"),
+    child: Text("Mene ostoskoriin"),
     onPressed: () {
       Navigator.push(
         context,
@@ -24,7 +37,7 @@ showSuccessDialog(BuildContext context) {
       primary: Colors.white,
       backgroundColor: Colors.black,
     ),
-    child: Text("Continue shopping"),
+    child: Text("Jatka ostoksia"),
     onPressed: () {
       Navigator.push(
         context,
@@ -34,8 +47,8 @@ showSuccessDialog(BuildContext context) {
   );
 
   AlertDialog alert = AlertDialog(
-    title: Text("Product added successful"),
-    content: Text("Would you like to continue shopping?"),
+    title: Text("Tuote lisätty ostoskoriin."),
+    content: Text("Haluatko jatkaa ostoksia vielä?"),
     backgroundColor: MyColor.turkoosi,
     actions: [
       basketButton,
@@ -43,7 +56,6 @@ showSuccessDialog(BuildContext context) {
     ],
   );
 
-  // show the dialog
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -63,7 +75,7 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
         Navigator.pop(context, "Lasku");
       },
       icon: Icon(Icons.insert_drive_file),
-      label: Text("Bill"),
+      label: Text("Lasku"),
       style: TextButton.styleFrom(
         primary: Colors.white,
         backgroundColor: Colors.black,
@@ -75,10 +87,10 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
     width: 190,
     child: TextButton.icon(
       onPressed: () {
-        Navigator.pop(context, "Card");
+        Navigator.pop(context, "Kortti");
       },
       icon: Icon(Icons.credit_card),
-      label: Text("Debit or Credit Card"),
+      label: Text("Pankki tai luottokortti"),
       style: TextButton.styleFrom(
         primary: Colors.white,
         backgroundColor: Colors.black,
@@ -90,10 +102,10 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
     width: 190,
     child: TextButton.icon(
       onPressed: () {
-        Navigator.pop(context, "Transfer");
+        Navigator.pop(context, "Tilisiirto");
       },
       icon: Icon(Icons.monetization_on_outlined),
-      label: Text("Bank Transfer"),
+      label: Text("Tilisiirto"),
       style: TextButton.styleFrom(
         primary: Colors.white,
         backgroundColor: Colors.black,
@@ -102,7 +114,7 @@ Future<String?> showPaymentOptionsDialog(BuildContext context) async {
   );
 
   AlertDialog alert = AlertDialog(
-    title: Text("Choose Payment Method"),
+    title: Text("Valitse maksutapa"),
     content: Column(
       mainAxisSize: MainAxisSize.min,
       children: [

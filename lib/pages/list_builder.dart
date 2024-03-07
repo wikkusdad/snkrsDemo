@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:snkrs_demo/pages/sneakers_page.dart';
 import 'package:snkrs_demo/pages/hoodies_page.dart';
+import 'package:snkrs_demo/pages/sneakers_page.dart';
 
 import 'lists.dart';
 
@@ -93,11 +91,11 @@ class SneakerList extends StatelessWidget {
                       )),
                   Positioned(
                     right: 0,
-                    bottom: 75,
+                    bottom: 65,
                     child: RotationTransition(
                       turns: AlwaysStoppedAnimation(-30 / 360),
                       child: Container(
-                          height: 200,
+                          height: 220,
                           child: Image.asset(sneakersList[index][4])),
                     ),
                   ),
@@ -212,12 +210,12 @@ class AirforceList extends StatelessWidget {
                         ],
                       )),
                   Positioned(
-                    right: 0,
-                    bottom: 75,
+                    right: 10,
+                    bottom: 65,
                     child: RotationTransition(
                       turns: AlwaysStoppedAnimation(-30 / 360),
                       child: Container(
-                          height: 180, child: Image.asset(AF1List[index][4])),
+                          height: 220, child: Image.asset(AF1List[index][4])),
                     ),
                   ),
                   Positioned(

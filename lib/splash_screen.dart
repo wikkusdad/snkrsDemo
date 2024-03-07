@@ -1,12 +1,12 @@
 import 'dart:async';
-import 'package:snkrs_demo/pages/login_page.dart';
+
 import 'package:flutter/material.dart';
+import 'package:snkrs_demo/colors/colors.dart';
+import 'package:snkrs_demo/pages/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
-  final void Function() toggleView;
-
-  SplashScreen({required this.toggleView});
-
+  final Widget? child;
+  const SplashScreen({super.key, this.child});
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -36,8 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Timer(Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (BuildContext context) =>
-            LoginPage(toggleView: widget.toggleView),
+        builder: (BuildContext context) => LoginPage(),
       ));
     });
   }
@@ -45,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 0, 0),
+      backgroundColor: MyColor.punainen,
       body: Center(
         child: AnimatedOpacity(
           opacity: showApp ? 0.0 : 1.0,

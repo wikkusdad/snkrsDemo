@@ -1,130 +1,213 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:snkrs_demo/authenticate/auth.dart';
-//import 'package:snkrs_demo/main.dart';
-import 'package:snkrs_demo/pages/home.dart';
+import 'package:snkrs_demo/colors/colors.dart';
+import 'package:snkrs_demo/form/form_container.dart';
+import 'package:snkrs_demo/models/toast.dart';
+import 'package:snkrs_demo/pages/register.dart';
 
 class LoginPage extends StatefulWidget {
-  final Function toggleView;
-  const LoginPage({super.key, required this.toggleView});
+  const LoginPage({super.key});
+
   @override
   State<LoginPage> createState() => _LoginPageState();
-  //_LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final AuthService _auth = AuthService();
+  bool _isSigning = false;
+  final FirebaseAuthService _auth = FirebaseAuthService();
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
-  String email = "";
-  String password = "";
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 0, 0),
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 0, 0),
-        title: Text('Kirjaudu'),
-        actions: <Widget>[
-          ElevatedButton.icon(
-              onPressed: () {
-                widget.toggleView();
-              },
-              icon: (Icon(Icons.person_4_outlined)),
-              label: Text('Rekisteröidy'))
-        ],
-      ),
+      backgroundColor: MyColor.punainen,
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(14.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
                 Image.asset(
                   'assets/images/Jumpman_logo.png',
                   height: 220,
                 ),
                 SizedBox(
-                  height: 24,
+                  height: 30,
                 ),
-                TextField(
-                  onChanged: (val) {
-                    setState(() => email = val);
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
+                FormContainerWidget(
+                  controller: _emailController,
+                  hintText: "Sähköposti",
+                  isPasswordField: false,
                 ),
-                SizedBox(height: 28),
-                TextField(
-                  onChanged: (val) {
-                    setState(() => password = val);
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                  obscureText: true,
+                SizedBox(
+                  height: 10,
                 ),
-                SizedBox(height: 28),
-                ElevatedButton(
-                  onPressed: () async {
-                    print(email);
-                    print(password);
+                FormContainerWidget(
+                  controller: _passwordController,
+                  hintText: "Salasana",
+                  isPasswordField: true,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _signIn();
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    minimumSize: Size(230, 60),
-                    padding: EdgeInsets.all(24),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  child: Container(
+                    width: double.infinity,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: _isSigning
+                          ? CircularProgressIndicator(
+                              color: Colors.white,
+                            )
+                          : Text(
+                              "Kirjaudu",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                     ),
                   ),
-                  child: Text('Login'),
                 ),
-                SizedBox(height: 14),
-                ElevatedButton(
-                  onPressed: () {
-                    //{
-                    // dynamic result = await _auth.signInAnon();
-                    //if (result == null) {
-                    //print('virhe kirjautuessa');
-                    //} else {
-                    //print('kirjauduttu');
-                    //print(result.uid);
-                    //}
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => NavigationPage()));
+                SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _signInWithGoogle();
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    minimumSize: Size(230, 60),
-                    padding: EdgeInsets.all(24),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  child: Container(
+                    width: double.infinity,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            FontAwesomeIcons.google,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            "Google tunnistautuminen",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  child: Text('Continue as a guest'),
                 ),
-                SizedBox(height: 15),
-
-                //ElevatedButton(
-                //  onPressed: () {
-                //  widget.toggleView();
-                //},
-                //child: Text('Rekisteröidy'))
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Eikö sinulla vielä ole tunnusta?"),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
+                          (route) => false,
+                        );
+                      },
+                      child: Text(
+                        "Rekisteröidy",
+                        style: TextStyle(
+                          color: MyColor.turkoosi,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void _signIn() async {
+    setState(() {
+      _isSigning = true;
+    });
+
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    setState(() {
+      _isSigning = false;
+    });
+
+    if (user != null) {
+      showToast(message: "Kirjauduttu onnistuneesti");
+      Navigator.pushNamed(context, "/home");
+    } else {
+      showToast(message: "virhe");
+    }
+  }
+
+  _signInWithGoogle() async {
+    final GoogleSignIn _googleSignIn = GoogleSignIn();
+
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
+
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleSignInAuthentication =
+            await googleSignInAccount.authentication;
+
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken,
+        );
+
+        await _firebaseAuth.signInWithCredential(credential);
+        Navigator.pushNamed(context, "/home");
+      }
+    } catch (e) {
+      showToast(message: "some error occured $e");
+    }
   }
 }

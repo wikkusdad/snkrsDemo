@@ -6,4 +6,6 @@ class MyColor {
   static const Color turkoosi = Color.fromARGB(255, 0, 247, 255);
   static const Color vihrea = Color.fromARGB(255, 128, 255, 0);
   static const Color punainen = Color.fromARGB(255, 255, 0, 0);
+  static const Color tekstikentta_harmaa = Color.fromARGB(255, 223, 209, 209);
+  static const Color tausta_harmaa = Color.fromARGB(255, 50, 51, 52);
 }

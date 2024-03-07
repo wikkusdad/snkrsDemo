@@ -1,11 +1,10 @@
+import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:snkrs_demo/colors/colors.dart';
 // import 'package:adding_items/main.dart';
 import 'package:snkrs_demo/pages/dialogs.dart';
-import 'package:snkrs_demo/colors/colors.dart';
 
 import 'functions.dart';
 
@@ -34,25 +33,25 @@ class SneakerPage extends StatefulWidget {
 bool addedToBasket = false;
 int selectedIndex = 6;
 List sizes = [
-  37,
+  37.0,
   37.5,
-  38,
+  38.0,
   38.5,
-  39,
+  39.0,
   39.5,
-  40,
+  40.0,
   40.5,
-  41,
+  41.0,
   41.5,
-  42,
+  42.0,
   42.5,
-  43,
+  43.0,
   43.5,
-  44,
+  44.0,
   44.5,
-  45,
+  45.0,
   45.5,
-  46
+  46.0
 ];
 
 class _SneakerPageState extends State<SneakerPage> {
@@ -122,26 +121,32 @@ class _SneakerPageState extends State<SneakerPage> {
           "€" + widget.price.toString(),
           style: GoogleFonts.prompt(fontSize: 24, fontWeight: FontWeight.w500),
         ),
-        SizedBox(
-          width: 150,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Colors.black),
-            onPressed: () {
-              showSuccessDialog(context);
+        Align(
+          alignment: Alignment.center,
+          child: SizedBox(
+            width: 180,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: Colors.black),
+              onPressed: () {
+                showSuccessDialog(context);
 
-              setState(() {
-                addedToBasket = true;
-                addTobag(
-                    brand: widget.brand,
-                    model: widget.model,
-                    imageUrl: widget.imageURL,
-                    size: sizes[selectedIndex],
-                    price: widget.price);
-              });
-            },
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Icon(Icons.shopping_bag), Text("Add to bag")]),
+                setState(() {
+                  addedToBasket = true;
+                  addTobag(
+                      brand: widget.brand,
+                      model: widget.model,
+                      imageUrl: widget.imageURL,
+                      size: sizes[selectedIndex],
+                      price: widget.price);
+                });
+              },
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.shopping_bag),
+                    Text("Lisää ostoskoriin")
+                  ]),
+            ),
           ),
         )
       ]),
